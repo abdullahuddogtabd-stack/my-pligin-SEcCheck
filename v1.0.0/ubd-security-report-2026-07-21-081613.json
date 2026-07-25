@@ -1,0 +1,148 @@
+{
+    "plugin_version": "1.0.0",
+    "site_url": "https://testprotact.uddogtabd.com/",
+    "wordpress": "7.0.2",
+    "php": "8.2.31",
+    "completed_at": "2026-07-21 08:14:27",
+    "score": 12,
+    "counts": {
+        "pass": 10,
+        "warning": 8,
+        "critical": 4,
+        "info": 0
+    },
+    "results": [
+        {
+            "status": "pass",
+            "title": "HTTPS configuration",
+            "details": "WordPress Address এবং Site Address—দুটিই HTTPS ব্যবহার করছে.",
+            "recommendation": ""
+        },
+        {
+            "status": "pass",
+            "title": "HTTP security headers",
+            "details": "প্রধান security headers response-এ পাওয়া গেছে.",
+            "recommendation": ""
+        },
+        {
+            "status": "pass",
+            "title": "WordPress core update",
+            "details": "WordPress core-এর pending update পাওয়া যায়নি.",
+            "recommendation": ""
+        },
+        {
+            "status": "critical",
+            "title": "Plugin updates",
+            "details": "1টি plugin update দরকার: Elementor",
+            "recommendation": "Backup ও staging test-এর পর plugins update করুন."
+        },
+        {
+            "status": "warning",
+            "title": "Inactive plugins",
+            "details": "2টি inactive plugin আছে: Akismet Anti-spam: Spam Protection, Hello Dolly",
+            "recommendation": "যেগুলো প্রয়োজন নেই সেগুলো backup নেওয়ার পর delete করুন."
+        },
+        {
+            "status": "pass",
+            "title": "Theme updates",
+            "details": "কোনো pending theme update পাওয়া যায়নি.",
+            "recommendation": ""
+        },
+        {
+            "status": "warning",
+            "title": "Inactive themes",
+            "details": "3টি inactive theme আছে: Twenty Twenty-Five, Twenty Twenty-Four, Twenty Twenty-Three.",
+            "recommendation": "Active theme এবং একটি current default fallback theme রেখে বাকিগুলো delete করুন."
+        },
+        {
+            "status": "warning",
+            "title": "PHP version",
+            "details": "PHP 8.2.31 ব্যবহার হচ্ছে; PHP 8.3 বা নতুন version recommended.",
+            "recommendation": "আগে staging site-এ theme/plugin compatibility পরীক্ষা করে hosting থেকে PHP upgrade করুন."
+        },
+        {
+            "status": "critical",
+            "title": "Debug information exposure",
+            "details": "Production website-এ debug output চালু থাকতে পারে.",
+            "recommendation": "wp-config.php-এ WP_DEBUG এবং WP_DEBUG_DISPLAY false করুন; প্রয়োজন হলে WP_DEBUG_LOG সাময়িকভাবে ব্যবহার করুন."
+        },
+        {
+            "status": "warning",
+            "title": "Dashboard file editor",
+            "details": "DISALLOW_FILE_EDIT চালু পাওয়া যায়নি.",
+            "recommendation": "wp-config.php-এ define( 'DISALLOW_FILE_EDIT', true ); যোগ করুন."
+        },
+        {
+            "status": "pass",
+            "title": "Secure admin sessions",
+            "details": "FORCE_SSL_ADMIN enabled আছে.",
+            "recommendation": ""
+        },
+        {
+            "status": "pass",
+            "title": "User registration",
+            "details": "Public user registration বন্ধ আছে.",
+            "recommendation": ""
+        },
+        {
+            "status": "critical",
+            "title": "Administrator accounts",
+            "details": "সহজে অনুমানযোগ্য admin username পাওয়া গেছে: admin.",
+            "recommendation": "নতুন unique Administrator account তৈরি করে পুরোনো risky account-এর content transfer করে accountটি remove করুন."
+        },
+        {
+            "status": "pass",
+            "title": "Database table prefix",
+            "details": "Default wp_ prefix ব্যবহার হচ্ছে না (wpam_).",
+            "recommendation": ""
+        },
+        {
+            "status": "pass",
+            "title": "Authentication keys and salts",
+            "details": "সব WordPress security key/salt উপস্থিত এবং আলাদা মনে হচ্ছে.",
+            "recommendation": ""
+        },
+        {
+            "status": "critical",
+            "title": "File permissions",
+            "details": "অতিরিক্ত open permission পাওয়া গেছে: wp-config.php (0644).",
+            "recommendation": "সাধারণভাবে folders 0755, files 0644 এবং wp-config.php 0640/0600 ব্যবহার করুন; 0777 ব্যবহার করবেন না। Hosting ownership অনুযায়ী আগে support-এর সঙ্গে মিলিয়ে নিন."
+        },
+        {
+            "status": "warning",
+            "title": "Security/firewall plugin",
+            "details": "পরিচিত security/firewall plugin শনাক্ত হয়নি। এই Auditor নিজে firewall নয়.",
+            "recommendation": "একটি reputable security solution ব্যবহার করুন; একই কাজের একাধিক firewall plugin একসঙ্গে চালাবেন না."
+        },
+        {
+            "status": "warning",
+            "title": "Two-factor authentication",
+            "details": "2FA-capable active plugin শনাক্ত হয়নি.",
+            "recommendation": "সব Administrator account-এ 2FA চালু করুন."
+        },
+        {
+            "status": "warning",
+            "title": "Backup system",
+            "details": "পরিচিত backup plugin শনাক্ত হয়নি.",
+            "recommendation": "Hosting backup থাকলেও files + database-এর নিয়মিত off-site backup রাখুন এবং restore test করুন."
+        },
+        {
+            "status": "warning",
+            "title": "Uploads PHP execution protection",
+            "details": "uploads/.htaccess protection file পাওয়া যায়নি বা readable নয়.",
+            "recommendation": "Apache/LiteSpeed হলে uploads folder-এ PHP execution deny rule যোগ করুন এবং upload/forms পরীক্ষা করুন."
+        },
+        {
+            "status": "pass",
+            "title": "Executable files in uploads",
+            "details": "প্রথম 162টি uploads file scan করে executable PHP-type file পাওয়া যায়নি.",
+            "recommendation": ""
+        },
+        {
+            "status": "pass",
+            "title": "WordPress core integrity",
+            "details": "Core files official checksums-এর সঙ্গে মিলেছে এবং wp-admin/wp-includes-এ unexpected executable file পাওয়া যায়নি.",
+            "recommendation": ""
+        }
+    ]
+}
